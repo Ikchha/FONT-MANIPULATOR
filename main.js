@@ -4,11 +4,11 @@ difference = 0;
 
 function setup() {
     video = createCapture(VIDEO);
-    video.size(520, 470);
-    canvas = createCanvas(550, 550);
+    video.size(550, 500);
+    canvas = createCanvas(550, 500);
     canvas.position(560, 150);
-    poseNet = ml5.poseNet( video, modelLoaded);
-    poseNet.on("pose", gotPoses);
+    poseNet = ml5.poseNet(video, modelLoaded);
+    poseNet.on('pose', gotPoses);
     
 }
 function modelLoaded() {
@@ -29,7 +29,10 @@ function gotPoses(results) {
 }
 function draw() {
     background("white");
-    textSize("25px");
-    fill("yellow");
-    text('Ikchha', 20, 20);
+    document.getElementById("text_side").innerHTML = "Font size of the text will be = " + difference + "px";
+    textSize("25px")
+    fill("blue");
+    stroke("red");
+    text('Ikchha', 20, 200);
+    
 }
